@@ -1,12 +1,18 @@
 import React from 'react'
 
 
-const TotalAll = ({state}) => {
+const TotalAll = ({state, deleteItem}) => {
+    // console.log(deleteTodoItem)
+    
+//  let handleClick=(e)=>{
+// // e.preventDefault()
+//     deleteItem(e)
+//  }
 
     const totalSum=()=>{
         return state.reduce((sum,item)=>sum+item.amount,0)}
 
-    console.log(state)
+    // console.log(state)
     return (  
         <div>
             <h5>Total Earnings </h5>
@@ -23,13 +29,13 @@ const TotalAll = ({state}) => {
             <tbody>
                 {state.map((item, index)=>{
                     return(
-                <tr key={item.id}>
+                <tr key={item._id}>
                     <td style={{border: 'solid gray'}}>{item.date}</td>    
-                    <td style={{border: 'solid gray'}}>{item.earnedby}</td>    
+                    <td style={{border: 'solid gray'}}>{item.incomefrom}</td>    
                     <td style={{border: 'solid gray'}}>${item.amount}</td>    
-                    <td style={{border: 'solid gray'}}>{item.earnedfor}</td>    
+                    <td style={{border: 'solid gray'}}>{item.desc}</td>    
                     <td style={{border: 'solid gray'}}><button style={{border: 'none', color:'green'}}>Update</button></td>    
-                    <td style={{border: 'solid gray'}}><button style={{border: 'none', color:'red'}}>Delete</button></td>    
+                    <td style={{border: 'solid gray'}}><button type='button' onClick={()=>deleteItem(item._id)} style={{border: 'none', color:'red'}}>Delete</button></td>    
                 </tr>
                 )})} 
 

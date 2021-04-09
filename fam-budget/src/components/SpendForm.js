@@ -40,7 +40,40 @@ onChange=e=>{
 render(){
     return (<div>
     <h6 style={{color:'green'}}>Add new SPENDINGS</h6> 
-        <form >
+
+    <form>
+  <div className="form-group">
+    <label>Date</label>
+    <input  onChange={this.inputHandler} value={this.state.data} name='date'type='date' className="form-control"  placeholder="enter date"/>
+  </div>
+  <div className="form-group">
+    <label>Name</label>
+    <input onChange={this.inputHandler}  value={this.state.storeName} name= 'storeName' type='text' className="form-control"  placeholder="name"/>
+  </div>
+  <div className="form-group">
+    <label>Paid for</label>
+    <input onChange={this.inputHandler}  value={this.state.desc} name= 'desc' type='text' className="form-control" placeholder="paid for"/>
+  </div>
+  <div className="form-group">
+    <label>Sum</label>
+    <input onChange={this.inputHandler}  value={this.state.amount} name='amount' type='number' className="form-control"  placeholder="amount"/>
+  </div>
+  <div className="form-group">
+    <label for="exampleFormControlSelect1">Section</label>
+    <select  onChange={this.onChange} className="form-control" id="exampleFormControlSelect1">
+               <option>select one</option>
+               <option value={'grocery'}>Grocery</option>
+               <option value={'transport'}>Transport</option>
+               <option value={'utility'}>Utility</option>
+               <option value={'others'}>Others</option>
+    </select>
+  </div>
+  <button type="submit" onClick={this.submitHandler} class="btn btn-secondary btn-lg btn-block">ADD</button>
+
+</form>
+
+
+ {/* <form >
            <label>Date<input  onChange={this.inputHandler} value={this.state.data} name='date'type='date'/></label>     
            <label>Name<input onChange={this.inputHandler}  value={this.state.storeName} name= 'storeName' type='text'/></label>
            <label>Paid for<input onChange={this.inputHandler}  value={this.state.desc} name= 'desc' type='text'/></label>
@@ -50,16 +83,12 @@ render(){
                <option value={'transport'}>Transport</option>
                <option value={'utility'}>Utility</option>
                <option value={'others'}>Others</option>
-
-           {/* <label>grocery<input  onChange={this.onChange} type='radio'id='grocery'  checked={value==='grocery'} value='grocery'/></label> 
-           <label>transport<input onChange={this.onChange} type='radio' id='transport' checked={value==='transport'} value='transport'/></label> 
-           <label>utility<input onChange={this.onChange} type='radio' id='utility'  checked={value==='utility'} value='utility'/></label> 
-           <label>others<input onChange={this.onChange} type='radio' id='others'  checked={value==='others'} value='others'/></label>  */}
+          
            </select>
              <br/>
 
            <button onClick={this.submitHandler} type='submit'>ADD</button>    
-        </form>
+        </form>  */}
         
     </div> 
      )

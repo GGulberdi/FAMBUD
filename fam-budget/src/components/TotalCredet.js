@@ -1,11 +1,21 @@
 import React from 'react'
 
 
-const TotalAll = ({state}) => {
+const TotalAll = ({state, deleteItem, handleUpdate}) => {
 
    const totalSum=()=>{
    return state.reduce((sum,item)=>sum+item.amount,0)}
 
+   let handleDeleteButton=(e)=>{
+    //   console.log(e)
+//      deleteItem(e.target.value)
+   }
+
+   let handleUpdateButton=(e)=>{
+    console.log(e)
+     handleUpdate(e.target.value.id)
+ }
+  
 
 
     return (  
@@ -29,11 +39,10 @@ const TotalAll = ({state}) => {
                     <td style={{border: 'solid gray'}}>{item.storeName}</td>    
                     <td style={{border: 'solid gray'}}>${item.amount}</td>    
                     <td style={{border: 'solid gray'}}>{item.desc}</td>    
-                    <td style={{border: 'solid gray'}}><button style={{border: 'none', color:'green'}}>Update</button></td>    
-                    <td style={{border: 'solid gray'}}><button style={{border: 'none', color:'red'}}>Delete</button></td>    
-                    
-
-                </tr>
+                    <td style={{border: 'solid gray'}}><button onClick={handleUpdateButton} style={{border: 'none', color:'green'}}>Update</button></td>    
+                    <td style={{border: 'solid gray'}}>
+                        <button style={{border: 'none', color:'red'}} onClick={()=> deleteItem(item._id)}>Delete</button></td>    
+                 </tr>
                 )})}
             </tbody> 
             <tfoot>

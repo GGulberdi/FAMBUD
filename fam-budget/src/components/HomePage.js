@@ -5,14 +5,14 @@ import EarningForm from './EarningForm'
 import Total from './Total.js';
 import '../App.css'
 
-function HomePage({ newPost, submit , submitDebet}) {
+function HomePage({ state, submit , submitDebet}) {
   // console.log(submitDebet)
 
 
 
   return (
     <div>
-          <Total />
+          <Total state={state}  />
 <div class ='debet-credit'>
        
         <div class="card" style={{ width: 18 + 'rem', marginRight: '30px', marginTop: '30px', marginBottom: '30px' }}>
